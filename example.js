@@ -32,10 +32,13 @@ function luhnAlgorithm(value, supplement) {
         return (nCheck % 10) == 0;
     }
 }
+
+// один случайный пан
 function getRandomPan() {
     let pan = '' + bins[getRandomInt(0, bins.length - 1)] + getRandomInt(100000000, 999999999);
     return pan + luhnAlgorithm(pan, 1);
 }
+
 function getPans(n, print) {
     let result = [];
     for (let i = 0; i < n; i++) result.push(getRandomPan());
